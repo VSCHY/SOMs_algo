@@ -39,7 +39,7 @@ Get the clusters (how the centroid of the cluster are defined) :
 
 Get the map vector (to which cluster does the input vector belong) :
 
-<pre><code> map_vects = som.map_vects(mlin.dat)
+<pre><code> map_vects = som.map_vects(mlin.data)
 </code></pre>
 
 ## Create a new project
@@ -49,3 +49,9 @@ To create a new project there are two elements to generate :
 2. the script to generate a netCDF for the SOMS algorithm, in order to avoir launching the SOMS each time.
 
 In the examples there are different examples of the input structure. The output file is only available for the experiment with the VIMD variable over the Pantanal.
+
+## Recommendations
+
+It is recommended to reduce as much as possible the dimension of the input vector : you can for example use lower resolution data (if it's a 2D spatial input), use a reduction with a Principal Component Analysis (PCA) etc. It is also necessary to avoid adding noise and select / filter carefully the variable used.
+
+On the other hand, one should also think in the quantity of vector. It is possible to give less vector to construct the SOMS and then get the output for other vectors (cf. som.fit(mlin.data) - construct - and som.map_vects(mlin.data) - get the corresponding clusters)
