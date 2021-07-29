@@ -4,7 +4,7 @@ import numpy as np
 def kohonen_map(xdim, ydim, data, outdir):
     # Plot Kohonen map : nb of element per cluster
     plt.figure()
-    plt.pcolor(np.arange(0,xdim+1),np.arange(0,xdim+1), number_elements_Koho)
+    plt.pcolor(np.arange(0,xdim+1),np.arange(0,xdim+1), data)
     plt.xlabel("m")
     plt.xlim((0,xdim))
     plt.ylim((0,ydim))
